@@ -1,14 +1,28 @@
 #include <iostream>
+#include <fstream>
 #include <string>
 //using namespace std;
 class pixel{
 		int r, g, b;
 	public:
-		pixel(int red, int green, int blue) :r{red}, g{green}, b{blue} {};
-		pixel() :r{0}, g{0}, b{0} {};
+		pixel(int red, int green, int blue){
+			r = red;
+		       	g = green;
+		       	b = blue;
+		}
+		pixel(){
+			r = 0;
+		       	g = 0;
+		       	b = 0;
+		}
 
-		std::string to_string(){ 
-			return std::to_string(r) + " " + std::to_string(g) + " " + std::to_string(b);
+		//std::string to_string(){ 
+		//	return std::to_string(r) + " " + std::to_string(g) + " " + std::to_string(b);
+		//}
+
+		std::ostream& operator<<(std::ostream& fs){
+			fs << r << " " << g << " " << b;
+			return fs;
 		}
 
 		pixel& operator+=(int i){

@@ -1,16 +1,16 @@
-#include <iostream>
-#include <fstream>
+//#include <iostream>
+//#include <fstream>
 #include "pixel.cpp"
 
 using namespace std;
 
 int main(){
-	ofstream file;
+	fstream file;
 	file.open("output.ppm");
 	file << "P3\n";
 	file << "500 500\n";
-	file << "255\n";
-	file << "\n";
+	file << 255 << "\n";
+	//file << "\n";
 
 	pixel history[4];
 
@@ -41,7 +41,7 @@ int main(){
 			//else
 			//	history[place] -= 25;
 			
-			file << history[place].to_string();
+			file << (history[place]);
 
 			if (j != 499)
 				file << " ";
@@ -54,4 +54,5 @@ int main(){
 		if (i != 499)
 			file << "\n";
 	}
+	file.close();
 }
