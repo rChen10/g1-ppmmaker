@@ -2,9 +2,10 @@
 #include <fstream>
 #include <string>
 //using namespace std;
+
 class pixel{
-		int r, g, b;
 	public:
+		int r, g, b;
 		pixel(int red, int green, int blue){
 			r = red;
 		       	g = green;
@@ -80,3 +81,9 @@ class pixel{
 			return *this;
 		}
 };
+
+
+std::ostream& operator<<(std::ostream& fs, const pixel& p){
+	fs << p.r << " " << p.g << " " << p.b;
+	return fs;
+}

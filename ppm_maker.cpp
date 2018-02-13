@@ -5,7 +5,7 @@
 using namespace std;
 
 int main(){
-	fstream file;
+	ofstream file;
 	file.open("output.ppm");
 	file << "P3\n";
 	file << "500 500\n";
