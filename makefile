@@ -1,4 +1,5 @@
 all: picmaker
+	./a.out
 
 picmaker: ppm_maker.cpp pixel
 	g++ ppm_maker.cpp
